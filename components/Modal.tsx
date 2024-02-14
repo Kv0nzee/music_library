@@ -38,6 +38,7 @@ const Modal: React.FC<ModalProps> = ({
             h-full 
             md:h-auto 
             md:max-h-[85vh] 
+            overflow-y-scroll
             w-full 
             md:w-[90vw] 
             md:max-w-[450px] 

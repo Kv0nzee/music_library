@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { User } from "@supabase/auth-helpers-nextjs"; // Importing the User type from the Supabase library
 import { useSessionContext, useUser as useSupaUser } from "@supabase/auth-helpers-react"; // Importing custom hooks for managing session and user data
@@ -42,7 +42,7 @@ export const MyUserContextProvider = (props: Props) => {
     const [subscription, setSubscription] = useState<Subscription | null>(null);
 
     // Function to fetch user details from the database
-    const getUserDetails = () => supabase.from('users').select("*").single();
+    const getUserDetails = () => supabase.from('users').select('*').single();
     // Function to fetch subscription details from the database
     const getSubscription = () => supabase.from('subscriptions').select('*, prices(*, products(*))').in('status', ['trialing', 'active']).single();
 
