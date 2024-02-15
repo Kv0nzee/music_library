@@ -3,6 +3,7 @@
 import { Song } from "@/type";
 
 import SongItem from "@/components/SongItem";
+import useOnPlay from "@/hooks/useOnPlay";
 
 interface PageContentProps{
     songs: Song[];
@@ -11,6 +12,10 @@ interface PageContentProps{
 const PageContent: React.FC<PageContentProps> = ({
     songs
 }) => {
+
+  const onPlay = useOnPlay(songs);
+
+
     if (songs.length === 0) {
         return (
             <div className="mt-4 text-neutral-400">
