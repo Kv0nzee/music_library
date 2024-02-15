@@ -2,6 +2,7 @@
 
 import LikeButton from "@/components/LikeButton";
 import MediaItem from "@/components/MediaItem";
+import PlayButton from "@/components/PlayButton";
 import useOnPlay from "@/hooks/useOnPlay";
 import { Song } from "@/type";
 
@@ -42,7 +43,7 @@ const SearchContent: React.FC<SearchContentProps> = ({
               <MediaItem 
                 onClick={(id: string) => onPlay(id)} 
                 data={song}
-              />
+              />  
             </div>
             <LikeButton songId={song.id} />
           </div>
