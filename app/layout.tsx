@@ -18,8 +18,6 @@ export const metadata: Metadata = {
   description: "Listen to music!",
 };
 
-export const revalidate = 0;
-
 export default async function RootLayout({
   children,
 }: Readonly<{
