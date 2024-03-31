@@ -13,6 +13,7 @@ import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
 
 import Button from "./Button";
+import useUserinfoModal from "@/hooks/useUserinfoModal";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -22,6 +23,7 @@ interface HeaderProps {
 const Header:React.FC<HeaderProps> = ({ children, className }) => {
     const authModal = useAuthModal();
     const router = useRouter();
+    const userinfoModal = useUserinfoModal();
 
     const supabaseClient = useSupabaseClient();
     const { user }  = useUser();
@@ -124,7 +126,7 @@ const Header:React.FC<HeaderProps> = ({ children, className }) => {
                     Logout
                   </Button>
                   <Button 
-                    onClick={() => router.push('/account')} 
+                    onClick={() => userinfoModal.onOpen()} 
                     className="bg-white"
                   >
                     <FaUserAlt />
